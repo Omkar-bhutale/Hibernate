@@ -1,0 +1,26 @@
+from Hibernet.org.id package
+
+for oracle db
+@GenericGenerator (name = "gen1", strategy = "sequence", parameters = 
+{ @Parameter(value = "sid_seq", name = "sequence") })
+ @GeneratedValue (generator = "gen1")
+ 
+ for mysql db
+ @GenericGenerator(name = "gen1", strategy = "increment")
+@GeneratedValue(generator = "gen1")
+
+This code snippet is from Java’s Hibernate framework. The @GenericGenerator annotation defines a strategy for generating values of primary keys. In this case, “gen1” is the name of the generator, and “increment” is the strategy, which means the value will be incremented by 1 each time a new entity is persisted. The @GeneratedValue annotation specifies that the generation of the primary key’s value should use the generator named “gen1”
+
+
+//from javax.persistance package
+
+	//JPA
+	//pk  are created by framework 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//--> besst for mysql db
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE) -->best for oracle
+	
+	//if a sequance is created by devloper in oracle
+//	@SequenceGenerator(name = "gen1",sequenceName = "JPA_SID_SEQUANCE",initialValue = 5,allocationSize = 5) 
+//	@GeneratedValue(generator = "gen1",strategy = GenerationType.SEQUENCE)-->if the sequnce is created by devloper
+	
+ 

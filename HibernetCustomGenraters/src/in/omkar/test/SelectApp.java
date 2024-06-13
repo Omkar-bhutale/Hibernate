@@ -23,7 +23,7 @@ public class SelectApp {
 		}
 		finally {
 			HibernateUtil.closeSession();
-			HibernateUtil.closeSessionFactory();
+			HibernateUtil.closeSessionFactory(); 
 		}
 	}
 	
